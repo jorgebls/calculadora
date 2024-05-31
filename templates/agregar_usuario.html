@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear un nuevo usuario de pensión</title>
+</head>
+<body>
+    <h1>Crear nuevo usuario de pensión</h1>
+    <p>Ingrese los datos del usuario de pensión que desea crear:</p>
+    <form action="/usuarios/crear-usuario" method="post">
+        <div>Cédula: <input type="text" name="cedula" required></div>
+        <div>Edad: <input type="number" name="edad" required></div>
+        <div>Sexo: <input type="text" name="sexo" required></div>
+        <div>Estado Civil: <input type="text" name="estado_civil" required></div>
+        <div>Salario Actual: <input type="number" name="salario_actual" required></div>
+        <div>Semanas Laboradas: <input type="number" name="semanas_laboradas" required></div>
+        <div>Ahorro Pensional a Hoy: <input type="number" name="ahorro_pensional_a_hoy" required></div>
+        <div>Rentabilidad Promedio (%): <input type="number" step="0.01" name="rentabilidad_promedio" required></div>
+        <div>Tasa de Administración (%): <input type="number" step="0.01" name="tasa_administracion" required></div>
+        <div>Edad Pensión Total: <input type="number" name="edad_pension_total" required></div>
+        <div>Hereda Pensión (sí/no): <input type="text" name="hereda_pension" required></div>
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>

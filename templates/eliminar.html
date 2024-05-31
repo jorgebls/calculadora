@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Usuario</title>
+</head>
+<body>
+    <h1>Eliminar Usuario</h1>
+    <p>Ingrese la cédula del usuario que desea eliminar. Esta acción no se puede deshacer.</p>
+    <form action="/usuarios/eliminar-usuario" method="get">
+        <div>
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required placeholder="Ingrese la cédula del usuario">
+        </div>
+        <input type="submit" value="Eliminar Usuario" onclick="return confirm('¿Está seguro de que desea eliminar este usuario? Esta acción es irreversible.');">
+    </form>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Usuario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Eliminar Usuario</h1>
+    </header>
+    <main>
+        <h2>¿Estás seguro de que deseas eliminar al usuario con cédula {{ cedula }}?</h2>
+        <form action="" method="post">
+            <input type="hidden" name="cedula" value="{{ cedula }}">
+            <input type="submit" value="Eliminar">
+            <a href="{{ url_for('index') }}">Cancelar</a>
+        </form>
+    </main>
+</body>
+</html>
