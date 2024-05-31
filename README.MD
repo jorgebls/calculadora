@@ -7,6 +7,10 @@ Consiste en un programa en Python que consulta el ahorro pensional de un fondo p
 - Melissa Foronda
 - Tomas Ramírez 
 
+## colaboradores
+- jorge bedoya
+-marcello maccanti
+
 ## Estructura del proyecto 
 Se tiene la carpeta principal "Proyecto_de_aula_calculadora_pensional", dentro hay otras dos carpetas, una es "test", la cual contiene las pruebas unitarias que ayudan a corroborar si la lógica está correcta y "src", la cual tiene otras seis carpetas, "Console", la cual contiene la consola en donde se va a mostrar la interfaz con la cual va a poder utilizar el usuario, "GUI" es donde se encuentra todo lo relacionado con la interfaz gráfica,  "Logic" la cual contiene la lógica y la fórmula para calcular el ahorro pensional esperado y el valor de la pensión total, "MODEL" se encuentra toda la parte lógica para manejar la información de la base de datos, "CONTROLLER" es donde se controlan todos los datos de la base de datos, "view" es la interacción con el usuario. 
 
@@ -57,4 +61,15 @@ Valor ahorro pensional esperado
 Pensión total
 
 
+## interfaz web
 
+para ejecutar la interfaz web Instale el paquete flask con:
+
+    pip install flask
+
+despues ejecute el archivo:
+
+python app.py
+
+Abre tu navegador web y ve a la dirección url para ver la aplicación en funcionamiento.
+   

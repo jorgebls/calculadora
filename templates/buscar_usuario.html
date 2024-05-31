@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Usuario</title>
+    <title>Buscar Usuario</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Eliminar Usuario</h1>
+        <h1>Buscar Usuario</h1>
     </header>
     <main>
-        <form action="{{ url_for('vista_usuario.eliminar_usuario') }}" method="post">
+        <form action="{{ url_for('vista_usuario.buscar_usuario') }}" method="post">
             <input type="text" name="cedula" placeholder="Ingrese la cédula del usuario" required>
-            <input type="submit" value="Eliminar">
+            <input type="submit" value="Buscar">
         </form>
     </main>
 </body>
-</html>
-
 </html>

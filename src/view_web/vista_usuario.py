@@ -7,7 +7,8 @@ from controller.ControladorUsuario_ParametrosPension import ControladorUsuarios_
 ControladorUsuarios_Parametros.EliminarTabla()
 ControladorUsuarios_Parametros.CrearTabla()
 
-blueprint = Blueprint("vista_usuario", __name__, "templates")
+blueprint = Blueprint( "vista_usuario", __name__, "templates" )
+
 
 import sys
 sys.path.append("src")
@@ -37,23 +38,36 @@ def agregar_usuario():
         return redirect(url_for('usuario.ver_usuario', cedula=cedula))
     return render_template('agregar_usuario.html')
 
-@blueprint.route('/buscar/<cedula>')
+@blueprint.route('/buscar', methods=['GET', 'POST'])
+def buscar_usuario():
+    if request.method == 'POST':
+        cedula = request.form['cedula']
+        return redirect(url_for('vista_usuario.buscar_usuario', cedula=cedula))
+    return render_template('buscar_usuario.html')
+
+
+@blueprint.route('/<cedula>')
 def ver_usuario(cedula):
     usuario = ControladorUsuarios_Parametros.BuscarUsuarioPorCedula(cedula)
+    if usuario is None:
+        return "Usuario no encontrado", 404
     return render_template('ver_usuario.html', usuario=usuario)
 
-@blueprint.route('/actualizar/<cedula>', methods=['GET', 'POST'])
-def actualizar_usuario(cedula):
+
+
+@blueprint.route('/actualizar', methods=['GET', 'POST'])
+def actualizar_usuario():
     if request.method == 'POST':
+        cedula = request.form['cedula']
         salario_nuevo = request.form['salario_actual']
         ControladorUsuarios_Parametros.ActualizarUsuarioPorCedula(cedula, salario_nuevo)
         return redirect(url_for('usuario.ver_usuario', cedula=cedula))
-    usuario = ControladorUsuarios_Parametros.BuscarUsuarioPorCedula(cedula)
-    return render_template('actualizar_usuario.html', usuario=usuario)
+    return render_template('actualizar_usuario.html')
 
-@blueprint.route('/eliminar/<cedula>', methods=['GET', 'POST'])
-def eliminar_usuario(cedula):
+@blueprint.route('/eliminar', methods=['GET', 'POST'])
+def eliminar_usuario():
     if request.method == 'POST':
+        cedula = request.form['cedula']
         ControladorUsuarios_Parametros.EliminarUsuarioPorCedula(cedula)
         return redirect(url_for('index'))
-    return render_template('eliminar_usuario.html', cedula=cedula)
+    return render_template('eliminar.html')

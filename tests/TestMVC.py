@@ -1,6 +1,7 @@
 import unittest
 
 import sys
+sys.path.append("CALCULADORA/src")
 sys.path.append("src")
 
 from model.Usuario_Parametros import UsuarioParametrosPension

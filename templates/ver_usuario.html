@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Información del Usuario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Usuario</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Información del Usuario de Pensión</h1>
-    <p>{{ mensaje }}</p>
-    <div>
-        <strong>Cédula:</strong> {{ user.cedula }}
-    </div>
-    <div>
-        <strong>Edad:</strong> {{ user.edad }}
-    </div>
-    <div>
-        <strong>Sexo:</strong> {{ user.sexo }}
-    </div>
-    <div>
-        <strong>Estado Civil:</strong> {{ user.estado_civil }}
-    </div>
-    <div>
-        <strong>Salario Actual:</strong> {{ user.salario_actual }}
-    </div>
-    <div>
-        <strong>Semanas Laboradas:</strong> {{ user.semanas_laboradas }}
-    </div>
-    <div>
-        <strong>Ahorro Pensional a Hoy:</strong> {{ user.ahorro_pensional_a_hoy }}
-    </div>
-    <div>
-        <strong>Rentabilidad Promedio:</strong> {{ user.rentabilidad_promedio }}
-    </div>
-    <div>
-        <strong>Tasa de Administración:</strong> {{ user.tasa_administracion }}
-    </div>
-    <div>
-        <strong>Edad Pensión Total:</strong> {{ user.edad_pension_total }}
-    </div>
-    <div>
-        <strong>Hereda Pensión:</strong> {{ user.hereda_pension }}
-    </div>
+    <header>
+        <h1>Información del Usuario</h1>
+    </header>
+    <main>
+        <ul>
+            <li><strong>Cédula:</strong> {{ vista_usuario.cedula }}</li>
+            <li><strong>Edad:</strong> {{ vista_usuario.edad }}</li>
+            <li><strong>Sexo:</strong> {{ vista_usuario.sexo }}</li>
+            <li><strong>Estado Civil:</strong> {{ vista_usuario.estado_civil }}</li>
+            <li><strong>Salario Actual:</strong> {{ vista_usuario.salario_actual }}</li>
+            <li><strong>Semanas Laboradas:</strong> {{ vista_usuario.semanas_laboradas }}</li>
+            <li><strong>Ahorro Pensional a Hoy:</strong> {{ vista_usuario.ahorro_pensional_a_hoy }}</li>
+            <li><strong>Rentabilidad Promedio:</strong> {{ vista_usuario.rentabilidad_promedio }}</li>
+            <li><strong>Tasa de Administración:</strong> {{ vista_usuario.tasa_administracion }}</li>
+            <li><strong>Edad de Pensión Total:</strong> {{ vista_usuario.edad_pension_total }}</li>
+            <li><strong>Hereda Pensión:</strong> {{ vista_usuario.hereda_pension }}</li>
+        </ul>
+    </main>
 </body>
 </html>
